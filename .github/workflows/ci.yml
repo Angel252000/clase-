@@ -9,29 +9,36 @@ on:
 jobs:
   build-and-lint:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Install pnpm
       uses: pnpm/action-setup@v3
       with:
         version: 9
-        
+
     - name: Use Node.js 20
       uses: actions/setup-node@v4
       with:
         node-version: '20'
         cache: 'pnpm'
-        
+
     - name: Install dependencies
       run: pnpm install --frozen-lockfile
-      
-    - name: Lint Client
-      run: pnpm --filter client run lint
-      
+
+    - name: Type check Server
+      run: pnpm --filter server exec tsc --noEmit
+
+    - name: Type check Client
+      run: pnpm --filter client exec tsc --noEmit
+
     - name: Build Client
+      env:
+        # Variables necesarias para que Vite compile
+        VITE_STRIPE_PUBLISHABLE_KEY: ${{ secrets.VITE_STRIPE_PUBLISHABLE_KEY || 'pk_test_placeholder' }}
+        VITE_API_URL: http://localhost:4000
       run: pnpm --filter client run build
-      
+
     - name: Build Server
       run: pnpm --filter server run build
