@@ -1,0 +1,179 @@
+export interface Product {
+  id: string;
+  name: string;
+  tagline: string;
+  price: string;
+  priceNumber: number;
+  theme: string;
+  bgText: string;
+  description: string;
+  modelType?: 'icecream' | 'cone' | 'popsicle' | 'cup' | 'softserve';
+  modelPath?: string;
+  ingredients?: string[];
+  benefits?: string[];
+  nutrition?: {
+    calories: number;
+    protein: number;
+    fat: number;
+    carbs: number;
+  };
+  size?: string;
+  origin?: string;
+  rating?: number;
+  reviewsCount?: number;
+  isNewProduct?: boolean;
+  isBestSeller?: boolean;
+  image?: string; // e.g. '/images/products/fresa.png' — PNG fondo transparente
+}
+
+export const products: Product[] = [
+  {
+    id: "fresa",
+    name: "Fresa",
+    tagline: "El Deleite Rosado",
+    price: "₡2,000",
+    priceNumber: 2000,
+    theme: "#e84e72",
+    bgText: "FRESA",
+    description: "Auténtica fresa silvestre congelada en su punto máximo de madurez. Una paleta suave y cremosa que estalla en sabor con cada mordida, bañada en una sutil capa de frutos rojos.",
+    modelType: "popsicle",
+    ingredients: ["Fresa silvestre", "Crema fresca", "Leche entera", "Azúcar de caña", "Extracto natural de vainilla"],
+    benefits: ["Rico en antioxidantes", "Bajo en calorías", "Fuente de vitamina C", "Sin colorantes artificiales"],
+    nutrition: { calories: 120, protein: 2, fat: 4, carbs: 20 },
+    size: "120ml",
+    origin: "Costa Rica",
+    rating: 4.8,
+    reviewsCount: 247,
+    isBestSeller: true
+  },
+  {
+    id: "vainilla",
+    name: "Vainilla",
+    tagline: "El Clásico Sedoso",
+    price: "₡1,800",
+    priceNumber: 1800,
+    theme: "#dcb267",
+    bgText: "VAINILLA",
+    description: "Vainilla de Madagascar premium infundida en una base ultra cremosa. Un clásico atemporal rediseñado para derretirse en el paladar con una elegancia sedosa inigualable.",
+    modelType: "popsicle",
+    ingredients: ["Vainilla de Madagascar", "Crema fresca", "Leche entera", "Azúcar de caña", "Gomas naturales"],
+    benefits: ["Sabor auténtico", "Textura suave", "Sin aditivos sintéticos", "Perfectamente equilibrado"],
+    nutrition: { calories: 130, protein: 2.5, fat: 5, carbs: 18 },
+    size: "120ml",
+    origin: "Madagascar",
+    rating: 4.7,
+    reviewsCount: 189
+  },
+  {
+    id: "chocolate",
+    name: "Chocolate",
+    tagline: "Indulgencia Oscura",
+    price: "₡2,500",
+    priceNumber: 2500,
+    theme: "#3e2723",
+    bgText: "CACAO",
+    description: "Cacao oscuro al 70% procedente de granos selectos. Una experiencia intensa, amarga y dulce a la vez, cubierta con una crujiente capa de chocolate belga para el amante del cacao.",
+    modelType: "popsicle",
+    ingredients: ["Cacao 70% oscuro", "Chocolate belga", "Crema fresca", "Leche entera", "Azúcar"],
+    benefits: ["Alto en polifenoles", "Antioxidantes poderosos", "Estimula endorfinas", "Sin gluten"],
+    nutrition: { calories: 150, protein: 3, fat: 7, carbs: 20 },
+    size: "120ml",
+    origin: "Bélgica",
+    rating: 4.9,
+    reviewsCount: 312,
+    isBestSeller: true
+  },
+  {
+    id: "pistacho",
+    name: "Pistacho",
+    tagline: "El Verde Mantecoso",
+    price: "₡2,800",
+    priceNumber: 2800,
+    theme: "#7ba05b",
+    bgText: "PISTACHO",
+    description: "Pistachos tostados originarios de Sicilia, molidos en una pasta rica y mantecosa. Un equilibrio perfecto de notas saladas y dulces envuelto en una textura exquisitamente cremosa.",
+    modelType: "popsicle",
+    ingredients: ["Pistacho siciliano", "Crema fresca", "Leche entera", "Miel pura", "Sal marina"],
+    benefits: ["Proteína natural", "Grasas saludables", "Alto en fibra", "Minerales esenciales"],
+    nutrition: { calories: 140, protein: 4, fat: 6, carbs: 16 },
+    size: "120ml",
+    origin: "Sicilia, Italia",
+    rating: 4.9,
+    reviewsCount: 156
+  },
+  {
+    id: "mango",
+    name: "Mango",
+    tagline: "El Sol Tropical",
+    price: "₡2,200",
+    priceNumber: 2200,
+    theme: "#f59e0b",
+    bgText: "MANGO",
+    description: "Mango Ataulfo mexicano de la temporada en su punto óptimo de dulzura. Una explosión tropical que transporta tus sentidos a las playas más cálidas.",
+    modelType: "popsicle",
+    ingredients: ["Mango Ataulfo", "Crema fresca", "Leche entera", "Chile piquín", "Limón orgánico"],
+    benefits: ["Vitamina A natural", "Fibra digestiva", "Beta-caroteno", "Refrescante"],
+    nutrition: { calories: 115, protein: 1.5, fat: 3, carbs: 22 },
+    size: "120ml",
+    origin: "Guanacaste, Costa Rica",
+    rating: 4.8,
+    reviewsCount: 198,
+    isNewProduct: true
+  },
+  {
+    id: "cookies",
+    name: "Cookies & Cream",
+    tagline: "El Sueño Cremoso",
+    price: "₡3,000",
+    priceNumber: 3000,
+    theme: "#f5f5f5",
+    bgText: "COOKIES",
+    description: "Base de crema natural con generosos trozos de galleta de chocolate artesanal. Una experiencia clásica norteamericana elevada con ingredientes premium.",
+    modelType: "popsicle",
+    ingredients: ["Galletas de chocolate", "Crema fresca", "Leche entera", "Azúcar de caña", "Vainilla"],
+    benefits: ["Calcio natural", "Energía rápida", "Textura premium", "Sabor reconfortante"],
+    nutrition: { calories: 165, protein: 3, fat: 8, carbs: 22 },
+    size: "120ml",
+    origin: "Costa Rica",
+    rating: 4.7,
+    reviewsCount: 223,
+    isNewProduct: true
+  },
+  {
+    id: "coco",
+    name: "Coco",
+    tagline: "El Paraíso Blanco",
+    price: "₡2,300",
+    priceNumber: 2300,
+    theme: "#fafaf9",
+    bgText: "COCO",
+    description: "Coco fresco extraído directamente de la pulpa para una textura cremosa única. Inspirado en las playas tailandesas, con un toque exótico que refresca el alma.",
+    modelType: "popsicle",
+    ingredients: ["Coco fresco", "Leche de coco", "Crema fresca", "Azúcar de coco", "Ralladura natural"],
+    benefits: ["Electrolitos naturales", "Grasas saludables", "Hidratante", "Vegano opcional"],
+    nutrition: { calories: 135, protein: 2, fat: 7, carbs: 17 },
+    size: "120ml",
+    origin: "Tailandia",
+    rating: 4.6,
+    reviewsCount: 142
+  },
+  {
+    id: "mora-azul",
+    name: "Mora Azul",
+    tagline: "El Encanto Violeta",
+    price: "₡2,600",
+    priceNumber: 2600,
+    theme: "#6b46c1",
+    bgText: "MORA",
+    description: "Moras azules silvestres canadienses combinadas con yogurt griego natural. Un sabor sofisticado y refrescante con notas dulces y ligeramente ácidas.",
+    modelType: "popsicle",
+    ingredients: ["Mora azul silvestre", "Yogurt griego", "Crema fresca", "Miel orgánica", "Limón"],
+    benefits: ["Antioxidantes potentes", "Probióticos naturales", "Mejora memoria", "Anti-inflamatorio"],
+    nutrition: { calories: 110, protein: 4, fat: 2, carbs: 18 },
+    size: "120ml",
+    origin: "Canadá",
+    rating: 4.8,
+    reviewsCount: 167,
+    isNewProduct: true
+  }
+];
