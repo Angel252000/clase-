@@ -136,7 +136,7 @@ export const CategoryGrid: React.FC = () => {
                     ⭐ Best Seller
                   </span>
                 )}
-                {product.isNew && (
+                {product.isNewProduct && (
                   <span className="px-2 py-1 bg-emerald-500/30 backdrop-blur-md border border-emerald-500/40 text-emerald-200 text-[9px] tracking-widest uppercase font-bold rounded-full">
                     ✨ Nuevo
                   </span>
